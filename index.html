@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private CMS Control Center | Shivansh Ranjan Tripathi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="h-16 bg-slate-900 border-b border-slate-800 px-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+        <h1 class="font-bold text-sm sm:text-base text-white tracking-wide">Private CMS Portal (Isolated Repo)</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://shivanshranjantripathi.qd.je" target="_blank" rel="noreferrer" class="text-xs bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 px-3 py-1.5 rounded-lg hover:bg-indigo-600/30 transition-colors">
+          View Live Public Site ↗
+        </a>
+      </div>
+    </header>
+
+    {/* Main Management Hub */}
+    <main class="flex-1 p-6 sm:p-10 max-w-5xl mx-auto w-full space-y-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
+        <div class="space-y-2">
+          <h2 class="text-xl font-bold text-white">Welcome to Your Secure Isolated CMS</h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            This administration panel is safely hosted on a separate repository away from your public web visitors. Firestore database rules ensure that only authenticated operations or authorized writes can modify your live website data.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <a href="https://console.firebase.google.com/project/shivansh-ranjan-tripathi/firestore" target="_blank" rel="noreferrer" class="bg-slate-800 hover:bg-slate-700/80 border border-slate-700 p-4 rounded-xl flex items-center justify-between transition-all group">
+            <div>
+              <div class="font-semibold text-white text-sm">Firestore Database</div>
+              <div class="text-xs text-slate-400 mt-0.5">Edit profile, projects, and skills collections</div>
+            </div>
+            <span class="text-indigo-400 group-hover:translate-x-1 transition-transform">↗</span>
+          </a>
+
+          <a href="https://console.firebase.google.com/project/shivansh-ranjan-tripathi/storage" target="_blank" rel="noreferrer" class="bg-slate-800 hover:bg-slate-700/80 border border-slate-700 p-4 rounded-xl flex items-center justify-between transition-all group">
+            <div>
+              <div class="font-semibold text-white text-sm">Firebase Storage</div>
+              <div class="text-xs text-slate-400 mt-0.5">Manage media assets and uploaded files</div>
+            </div>
+            <span class="text-indigo-400 group-hover:translate-x-1 transition-transform">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-indigo-950/20 border border-indigo-500/20 rounded-xl p-6 text-slate-300 text-sm space-y-2">
+        <div class="font-semibold text-indigo-300">Security Tip:</div>
+        <p>Keep your separate admin repository URL private and bookmark it on your personal browser. Because no public links point to it from your main website, unauthorized visitors will never stumble upon it.</p>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBHHa2a_PVqmoAx2cPtf8LEyZlYC6zxCg",
+      authDomain: "shivansh-ranjan-tripathi.firebaseapp.com",
+      projectId: "shivansh-ranjan-tripathi",
+      storageBucket: "shivansh-ranjan-tripathi.firebasestorage.app",
+      messagingSenderId: "1075755218187",
+      appId: "1:1075755218187:web:d02b3e8f68640296a65e0e"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    console.log("Isolated Admin CMS connected securely.");
+  </script>
+</body>
+</html>
